@@ -1,0 +1,19 @@
+version: '1'
+
+services:
+  frontend:
+    image: etrackclient
+    ports:
+      - "3000:3000"  # Adjust the port if needed
+    networks:
+      - my-net
+
+  backend:
+    image: etrackserver
+    ports:
+      - "5000:5000"  # Adjust the port if needed
+    networks:
+      - my-net
+networks:
+  my-net:
+    driver: bridge
